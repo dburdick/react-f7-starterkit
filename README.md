@@ -5,7 +5,7 @@ This react starterkit provides a prepared development environment based on [gulp
 ## Get the kit
 
 ```
-$ git clone https://github.com/dburdick/react-material-starterkit.git && cd react-material-starterkit
+$ git clone https://github.com/dburdick/react-f7-starterkit.git && cd react-f7-starterkit
 ```
 
 ## Installation
