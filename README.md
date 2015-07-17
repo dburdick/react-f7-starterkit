@@ -1,4 +1,4 @@
-# React Material Starterkit
+# React Framework7 Starterkit
 
 This react starterkit provides a prepared development environment based on [gulp](https://github.com/gulpjs/gulp), [stylus](https://github.com/LearnBoost/stylus) and [webpack](https://github.com/webpack/webpack). The internal data flow is handled with  [Reflux](https://github.com/spoike/refluxjs) and the routing is managed with the [React-Router](https://github.com/rackt/react-router). The UI is handled by [Framework7](http://www.idangero.us/framework7). This is just a slight addition to [react-starterkit](https://github.com/wbkd/react-starterkit). 
 
