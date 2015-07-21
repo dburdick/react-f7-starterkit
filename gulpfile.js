@@ -48,7 +48,12 @@ gulp.task('framework7', function() {
         .pipe($.size({ title : 'F7' }))
         .pipe($.connect.reload());
 
-  return gulp.src(app + 'framework7.min.js')
+    gulp.src(app + 'fetch.js')
+        .pipe(gulp.dest(dist))
+        .pipe($.size({ title : 'F7' }))
+        .pipe($.connect.reload());
+
+    return gulp.src(app + 'framework7.min.js')
       .pipe(gulp.dest(dist))
       .pipe($.size({ title : 'F7' }))
       .pipe($.connect.reload());

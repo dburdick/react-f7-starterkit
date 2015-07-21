@@ -1,51 +1,43 @@
-import React from 'react';
+import React, { cloneElement } from 'react/addons';
 import { RouteHandler } from 'react-router';
 import { Link } from 'react-router';
 import Header from '../components/header.jsx'
-var mui = require('material-ui');
-let ThemeManager = new mui.Styles.ThemeManager();
+import Toolbar from '../components/toolbar.jsx'
+var { CSSTransitionGroup } = React.addons;
 
 class App extends React.Component {
 
-
-    getChildContext() {
-        return {
-            muiTheme: ThemeManager.getCurrentTheme()
-        };
-    }
-
-    componentDidUpdate(prevProps, prevState) {
+    componentDidMount(prevProps, prevState) {
         var myApp = new Framework7();
         var $$ = Dom7;
         var mainView = myApp.addView('.view-main', {
-            dynamicNavbar: true,
-            domCache: true //enable inline pages
+            dynamicNavbar: true
         });
     }
 
     render() {
+        var currentRouteName = this.props.location;
+
+        // get transition name from store
+        let transitionName = "exampleLeft";
+        if (this.state && this.state.transitionDirection && this.state.transitionDirection === "left")
+            transitionName = "example";
+        transitionName = currentRouteName === "/home" ? "example" : "exampleLeft";
+
         return (
             <div className="views">
                 <div className="view view-main">
                     < Header />
                     <div className="pages navbar-through toolbar-through">
-                        <RouteHandler/>
+                        <CSSTransitionGroup transitionName={transitionName} transitionEnter={true} transitionLeave={true} component="div">
+                            <RouteHandler key={currentRouteName}/>
+                        </CSSTransitionGroup>
                     </div>
-                    <div className="toolbar">
-                        <div className="toolbar-inner">
-                            <Link to="home" className="link">Home</Link>
-                            <Link to="info" className="link">Info</Link>
-                        </div>
-                    </div>
+                    < Toolbar />
                 </div>
             </div>
         );
     }
-
 }
-
-App.childContextTypes = {
-    muiTheme: React.PropTypes.object
-};
 
 export default App;

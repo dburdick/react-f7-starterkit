@@ -46,3 +46,103 @@ header
     
 .content
   padding: 1em
+
+.RouteTransition-enter {
+  opacity: 0.01;
+  -webkit-transition: opacity 1150ms ease-in;
+  transition: opacity 1150ms ease-in;
+}
+
+.RouteTransition-enter.RouteTransition-enter-active {
+  opacity: 1;
+}
+
+.RouteTransition-leave {
+  opacity: 1;
+  -webkit-transition: opacity 1150ms ease-in;
+  transition: opacity 1150ms ease-in;
+}
+
+.RouteTransition-leave.RouteTransition-leave-active {
+  opacity: 0.01;
+}
+
+
+
+/*.example-enter & {*/
+  /*opacity: 0.99;*/
+  /*transform: translate(-100%, 0);*/
+  /*transform: translate3d(-100%, 0, 0);*/
+  /*-webkit-transform: translate3d(0, 0, 0);*/
+/*}*/
+/*.example-enter.example-enter-active & {*/
+  /*opacity: 1;*/
+  /*-webkit-transform: translate3d(0, 0, 0);*/
+
+  /*transform:   translate(0,0);*/
+  /*transform: translate3d(0, 0, 0);*/
+  /*transition-property: transform, opacity;*/
+  /*transition-duration: 500ms;*/
+  /*transition-timing-function: cubic-bezier(0.175, 0.665, 0.320, 1), linear;*/
+/*}*/
+/*.example-leave & {*/
+  /*opacity: 1;*/
+  /*transform:   translate(0,0,0);*/
+  /*transform: translate3d(0,0,0);*/
+  /*-webkit-transform: translate3d(0, 0, 0);*/
+  /*transition-property: transform, opacity;*/
+  /*transition-duration: 500ms;*/
+  /*transition-timing-function: cubic-bezier(0.175, 0.665, 0.320, 1), linear;*/
+/*}*/
+
+/*.example-leave.example-leave-active & {*/
+  /*opacity: 0.99;*/
+  /*transform:   translate(100%,0);*/
+  /*transform: translate3d(100%,0,0);*/
+  /*-webkit-transform: translate3d(100%, 0, 0);*/
+/*}*/
+
+
+/*---------*/
+.example-enter & {
+  opacity: 0.9;
+  -webkit-transform: translate3d(-100%, 0, 0);
+}
+.example-enter.example-enter-active & {
+  opacity: 1;
+  -webkit-transform: translate3d(0, 0, 0);
+  transition-duration: 500ms;
+}
+.example-leave & {
+  opacity: 1;
+  -webkit-transform: translate3d(0, 0, 0);
+}
+
+.example-leave.example-leave-active & {
+  opacity: 0.9;
+  -webkit-transform: translate3d(100%, 0, 0);
+  transition-duration: 500ms;
+}
+
+/*---*/
+
+.exampleLeft-enter & {
+  opacity: 0.9;
+  -webkit-transform: translate3d(-100%, 0, 0);
+}
+.exampleLeft-enter.exampleLeft-enter-active & {
+  opacity: 1;
+  -webkit-transform: translate3d(0, 0, 0);
+  transition-duration: 500ms;
+}
+.exampleLeft-leave & {
+  opacity: 1;
+  -webkit-transform: translate3d(0, 0, 0);
+}
+
+.exampleLeft-leave.exampleLeft-leave-active & {
+  opacity: 0.9;
+  -webkit-transform: translate3d(-100%, 0, 0);
+  transition-duration: 500ms;
+}
+

@@ -1,7 +1,5 @@
-import React from 'react';
+import React, { cloneElement } from 'react/addons';
 import ItemActions from '../actions/itemActions';
-var mui = require('material-ui'),
-    Snackbar = mui.Snackbar;
 
 class ItemList extends React.Component {
 

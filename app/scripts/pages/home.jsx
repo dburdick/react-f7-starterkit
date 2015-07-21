@@ -28,17 +28,18 @@ class Home extends React.Component {
     }
 
     render() {
-
         return (
             <div className="page">
                 <div className="page-content">
-                    <div className="content-block">
-                        <p className="buttons-row">
-                            <Link to="home" className="button active">Home</Link>
-                            <Link to="info" className="button">Info</Link>
-                        </p>
+                    <div>
+                        <div className="content-block">
+                            <p className="buttons-row">
+                                <Link to="home" className="button active">Home</Link>
+                                <Link to="info" className="button">Info</Link>
+                            </p>
+                        </div>
+                        <ItemList { ...this.state } />
                     </div>
-                    <ItemList { ...this.state } />
                 </div>
             </div>
         );

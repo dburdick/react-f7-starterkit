@@ -2,26 +2,11 @@ import React from 'react';
 import { Link } from 'react-router';
 
 class Info extends React.Component {
-
-    componentDidUpdate(prevProps, prevState) {
-//// Initialize app
-//        var myApp = new Framework7();
-//
-//// If we need to use custom DOM library, let's save it to $$ variable:
-//        var $$ = Dom7;
-//
-//// Add view
-//        var mainView = myApp.addView('.view-main', {
-//            // Because we want to use dynamic navbar, we need to enable it for this view:
-//            dynamicNavbar: true
-//        });
-
-    }
-
     render() {
         return (
             <div className="page">
                 <div className="page-content">
+
                     <div className="content-block">
                         <p className="buttons-row">
                             <Link to="home" className="button">Home</Link>
