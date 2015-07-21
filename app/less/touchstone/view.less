@@ -1,0 +1,129 @@
+// Animation
+// ------------------------------
+
+// React's CSSTransitionGroup requires an animation so we transition from .99 opacity to 1 with "artificial"
+
+// transition: instant (default)
+.view-transition-instant-enter { .animation( artificial 10ms ); }
+.view-transition-instant-leave { .animation( fadeOut 60ms ); }
+
+// transition: fade
+.view-transition-fade-enter { .animation( artificial 10ms ); }
+.view-transition-fade-leave { .animation( fadeOut 380ms ); }
+
+// transition: fade expand
+
+.view-transition-fade-expand-enter { .animation( artificial 10ms ); }
+.view-transition-fade-expand-leave { .animation( fadeExpand 320ms ); }
+
+// transition: fade contract
+
+.view-transition-fade-contract-enter { .animation( artificial 10ms ); }
+.view-transition-fade-contract-leave { .animation( fadeContract 320ms ); }
+
+// SHOW
+// ====
+
+// common stacking context
+
+.view-transition-show-from-top-enter,
+.view-transition-show-from-right-enter,
+.view-transition-show-from-bottom-enter,
+.view-transition-show-from-left-enter {
+  pointer-events: none; // disable user interaction whilst views are transitioning
+  z-index: @view-transition-stack-top;
+}
+
+.view-transition-reveal-from-top-leave,
+.view-transition-reveal-from-right-leave,
+.view-transition-reveal-from-bottom-leave,
+.view-transition-reveal-from-left-leave {
+  pointer-events: none; // disable user interaction whilst views are transitioning
+  z-index: @view-transition-stack-bottom;
+}
+
+// common animation components
+
+.view-transition-show-from-top-enter,
+.view-transition-show-from-top-leave,
+.view-transition-show-from-bottom-enter,
+.view-transition-show-from-bottom-leave {
+  .animation-duration( @view-transition-duration );
+  .animation-timing-function( @view-transition-timing-function );
+}
+.view-transition-show-from-left-enter,
+.view-transition-show-from-left-leave,
+.view-transition-show-from-right-enter,
+.view-transition-show-from-right-leave {
+  .animation-duration( @view-transition-duration );
+  .animation-timing-function( @view-transition-timing-function );
+}
+
+// blank state
+
+.view-transition-show-from-top-leave,
+.view-transition-show-from-bottom-leave   { .animation-name( artificial ); }
+
+// variants
+
+.view-transition-show-from-top-enter      { .animation-name( viewShowFromTopEnter ); }
+.view-transition-show-from-right-enter    { .animation-name( viewShowFromRightEnter ); }
+.view-transition-show-from-bottom-enter   { .animation-name( viewShowFromBottomEnter ); }
+.view-transition-show-from-left-enter     { .animation-name( viewShowFromLeftEnter ); }
+
+.view-transition-show-from-left-leave     { .animation-name( viewShowFromLeftLeave ); }
+.view-transition-show-from-right-leave    { .animation-name( viewShowFromRightLeave ); }
+
+// REVEAL
+// ======
+
+// common stacking context
+
+.view-transition-reveal-from-top-enter,
+.view-transition-reveal-from-right-enter,
+.view-transition-reveal-from-bottom-enter,
+.view-transition-reveal-from-left-enter {
+  pointer-events: none; // disable user interaction whilst views are transitioning
+  z-index: @view-transition-stack-bottom;
+}
+
+.view-transition-reveal-from-top-leave,
+.view-transition-reveal-from-right-leave,
+.view-transition-reveal-from-bottom-leave,
+.view-transition-reveal-from-left-leave {
+  pointer-events: none; // disable user interaction whilst views are transitioning
+  z-index: @view-transition-stack-top;
+}
+
+// common animation components
+
+.view-transition-reveal-from-top-enter,
+.view-transition-reveal-from-top-leave,
+.view-transition-reveal-from-bottom-enter,
+.view-transition-reveal-from-bottom-leave {
+  .animation-duration( @view-transition-duration );
+  .animation-timing-function( @view-transition-timing-function );
+}
+.view-transition-reveal-from-left-enter,
+.view-transition-reveal-from-left-leave,
+.view-transition-reveal-from-right-enter,
+.view-transition-reveal-from-right-leave {
+  .animation-duration( @view-transition-duration );
+  .animation-timing-function( @view-transition-timing-function );
+}
+
+// blank state
+
+.view-transition-reveal-from-top-enter,
+.view-transition-reveal-from-bottom-enter   { .animation-name( artificial ); }
+
+// variants
+
+.view-transition-reveal-from-top-leave      { .animation-name( viewRevealFromTopLeave ); }
+.view-transition-reveal-from-right-leave    { .animation-name( viewRevealFromRightLeave ); }
+.view-transition-reveal-from-bottom-leave   { .animation-name( viewRevealFromBottomLeave ); }
+.view-transition-reveal-from-left-leave     { .animation-name( viewRevealFromLeftLeave ); }
+
+.view-transition-reveal-from-left-enter     { .animation-name( viewRevealFromLeftEnter ); }
+.view-transition-reveal-from-right-enter    { .animation-name( viewRevealFromRightEnter ); }
+

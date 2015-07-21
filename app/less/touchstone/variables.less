@@ -1,0 +1,249 @@
+//
+// Variables
+// ==============================
+
+
+
+
+// Colors
+// ------------------------------
+
+@gray-darker:                   lighten(#000, 13.5%); // #222
+@gray-dark:                     lighten(#000, 20%);   // #333
+@gray:                          lighten(#000, 40%); // #666
+@gray-light:                    lighten(#000, 60%); // #999
+@gray-lighter:                  lighten(#000, 93.5%); // #eee
+
+@green:                         #4acc1f;
+@blue:                          #007aff;
+@light-blue:                    #5ac8fa;
+@yellow:                        #ff9d34;
+@red:                           #ff3f34;
+
+@app-primary:                   @blue;
+@app-muted:                     @gray-light;
+@app-success:                   @green;
+@app-info:                      @light-blue;
+@app-warning:                   @yellow;
+@app-danger:                    @red;
+
+
+
+
+// Scaffolding
+// ------------------------------
+
+@body-bg:                      #f6f6f7;
+@text-color:                   black;
+
+@link-color:                   @app-primary;
+@link-hover-color:             lighten(@link-color, 10%);
+
+
+
+
+// Typography
+// ------------------------------
+
+@font-family-sans-serif:      "Helvetica Neue", Helvetica, Arial, sans-serif;
+@font-family-serif:           "Times New Roman", Times, Georgia, serif;
+@font-family-monospace:       Courier, monospace;
+@font-family-base:            @font-family-sans-serif;
+@font-weight-bold:            500;
+
+@font-size-xxs:               11px;
+@font-size-xs:                13px;
+@font-size-sm:                15px;
+@font-size-base:              17px;
+@font-size-lg:                20px;
+@font-size-xl:                24px;
+@font-size-xxl:               32px;
+
+@line-height-base:            1.4;
+@line-height-computed:        floor((@font-size-base * @line-height-base));
+
+@hr-border:                   rgba(0, 0, 0, 0.1);
+
+@headings-font-family:        @font-family-base;
+@headings-font-weight:        400;
+@headings-line-height:        1.1;
+@headings-color:              inherit;
+
+@font-size-h1:                36px;
+@font-size-h2:                24px;
+@font-size-h3:                18px;
+@font-size-h4:                16px;
+@font-size-h5:                14px;
+@font-size-h6:                12px;
+
+@ionicons-size-tiny:           8px;
+@ionicons-size-small:         12px;
+@ionicons-size-base:          16px;
+@ionicons-size-large:         24px;
+@ionicons-size-huge:          32px;
+@ionicons-size-massive:       64px;
+@ionicons-size-gargantuan:   128px;
+
+
+
+
+// Components
+// ------------------------------
+
+// lists
+
+@list-header-color:           #4d4d4d;
+
+// border radii
+
+@border-radius-small:         4px;
+@border-radius-base:          8px;
+@border-radius-large:         16px;
+
+// gutters
+
+@gutter-sm:                   8px;
+@gutter-base:                 10px;
+@gutter-lg:                   34px;
+
+// groups
+
+@group-bg:                    white;
+@group-color:                 @text-color;
+@group-header-color:          #4d4d4d;
+@group-footer-color:          @group-header-color;
+
+// items
+
+@item-bg:                     @group-bg;
+@item-bg-tap:                 #d9d9d9;
+@item-color:                  @text-color;
+@item-divider-color:          mix(black, @body-bg, 20%);
+@item-height:                 44px;
+@item-avatar-size:            40px;
+@item-thumbnail-size:         60px;
+@item-icon-size:              29px;
+
+// spacing
+
+@padding-base-vertical:      12px;
+@padding-base-horizontal:    15px;
+
+// buttons
+
+@button-disabled-color:      #c7c7cc;
+
+// segmented controls
+
+@segmented-control-height:   29px;
+
+
+
+
+// Headerbar
+// ------------------------------
+
+@statusbar-height:                   20px;
+
+@headerbar-bg:                       #efeff4;
+@headerbar-color:                    @gray-darker;
+@headerbar-height:                   44px;
+@headerbar-button-color:             @app-primary;
+@headerbar-button-color-disabled:    #ccc;
+
+@headerbar-left-arrow-width:         12px;
+@headerbar-left-arrow-with-gutter:   @headerbar-left-arrow-width + (@gutter-sm * 2);
+
+@searchfield-height:                 28px;
+
+
+
+
+// Footerbar
+// ------------------------------
+
+@footerbar-bg:                   @headerbar-bg;
+@footerbar-color:                @headerbar-color;
+@footerbar-height:               @headerbar-height;
+
+@footerbar-tab-bg-tapped:        transparent;
+@footerbar-tab-bg-selected:      transparent;
+@footerbar-tab-color-tapped:     inherit;
+@footerbar-tab-color-selected:   @app-primary;
+
+
+
+
+// Forms
+// ------------------------------
+
+@field-color:                 @text-color;
+@field-border:                #ddd;
+@field-border-focus:          darken(@field-border, 10%);
+@field-placeholder:           #c7c7cd;
+@field-label-color:           @gray;
+
+@field-height:                44px;
+@field-padding-vertical:      @padding-base-vertical;
+@field-padding-horizontal:    @padding-base-horizontal;
+
+
+
+
+// Layers
+// ------------------------------
+
+@zindex-dropdown:          1000;
+@zindex-popover:           1010;
+@zindex-tooltip:           1030;
+@zindex-popup-backdrop:    1040;
+@zindex-popup:             1050;
+@zindex-alertbar:          1060;
+
+
+
+
+// Views
+// -------------------------------
+
+// transitions
+
+@view-transition-distance:        125px; // TODO: 375/3 (375 = width of iPhone 6)
+@view-transition-duration:        500ms; // emulate iOS
+@view-transition-timing-function: cubic-bezier(.36, .66, .04, 1); // emulate iOS
+
+// stack
+
+@view-transition-stack-stable:  5;
+@view-transition-stack-top:    20;
+@view-transition-stack-bottom: 10;
+
+
+
+
+// Switch
+// -------------------------------
+
+@switch-width:                    51px;
+@switch-height:                   31px;
+@switch-border-width:             2px;
+@switch-border-radius:            20px;
+
+@switch-handle-width:             @switch-height - (@switch-border-width * 2);
+@switch-handle-height:            @switch-handle-width;
+@switch-handle-radius:            @switch-handle-width;
+@switch-handle-dragging-bg-color: darken(#fff, 5%);
+
+@switch-on-default-bg:            #4cd964;
+@switch-on-default-border:        @switch-on-default-bg;
+
+@switch-off-bg-color:             #fff;
+@switch-off-border-color:         #e6e6e6;
+
+@switch-handle-off-bg-color:      white;
+@switch-handle-on-bg-color:       @switch-handle-off-bg-color;
+
+@switch-transition-duration:      .3s;
+
+@switch-hit-area-expansion:   5px;
+

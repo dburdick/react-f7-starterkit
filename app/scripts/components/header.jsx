@@ -8,6 +8,9 @@ class Header extends React.Component {
     }
 
     render() {
+        let title = 'React Framework7 StarterKit';
+        if(this.props.location === '/info') title = 'Info';
+
         return (
             <div className="navbar">
                 <div className="navbar-inner">
@@ -17,7 +20,7 @@ class Header extends React.Component {
                             <span className="link">Back</span>
                         </Link>
                     </div>
-                    <div className="center sliding">React Framework7 StarterKit</div>
+                    <div className="center sliding">{title}</div>
                 </div>
 
             </div>
