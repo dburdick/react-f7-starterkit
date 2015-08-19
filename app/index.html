@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" href="framework7.min.css">
+    <link rel="stylesheet" href="lib/framework7.ios.min.css"/>
+    <link rel="stylesheet" href="lib/framework7.ios.colors.min.css"/>
 
     <!--<link rel="stylesheet" href="css/main.css">-->
-    <link rel="stylesheet" href="css/main_ext.css">
+    <link rel="stylesheet" href="css/main_ext.css"/>
 
     <!-- Required meta tags-->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
 
     <!-- Your app title -->
     <title>My App</title>
@@ -20,13 +20,15 @@
     <!--<link rel="stylesheet" href="path/to/my-app.css">-->
 </head>
 <body>
+<script type="text/javascript">
+    // Force `fetch` polyfill to workaround Chrome not displaying request body
+    // in developer tools for the native `fetch`.
+    self.fetch = null;
+</script>
+<script src="lib/fetch.js"></script>
+<script type="text/javascript" src="lib/framework7.min.js"></script>
 
-<!-- Path to Framework7 Library JS-->
-<script type="text/javascript" src="framework7.min.js"></script>
-<!-- Path to your app js-->
-<!--<script type="text/javascript" src="path/to/my-app.js"></script>-->
 <script src="js/main.js"></script>
-<script src="fetch.js"></script>
 
 </body>
 </html>

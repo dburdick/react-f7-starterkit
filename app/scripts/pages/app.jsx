@@ -5,7 +5,7 @@ import Header from '../components/header.jsx'
 import Toolbar from '../components/toolbar.jsx'
 var { CSSTransitionGroup } = React.addons;
 
-import TimeoutTransitionGroup from '../lib/timeoutTransitionGroup.js';
+import TimeoutTransitionGroup from '../../lib/timeoutTransitionGroup.js';
 
 class App extends React.Component {
 

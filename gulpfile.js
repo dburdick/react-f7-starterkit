@@ -10,6 +10,7 @@ var webpackConfig = require('./webpack.config.js').getConfig(environment);
 var port = $.util.env.port || 1337;
 var app = 'app/';
 var dist = 'dist/';
+var scriptsLib = app + 'lib/';
 
 // https://github.com/ai/autoprefixer
 var autoprefixerBrowsers = [                 
@@ -41,22 +42,18 @@ gulp.task('html', function() {
       .pipe($.connect.reload());
 });
 
-// copy framework7 from app to dist
-gulp.task('framework7', function() {
-    gulp.src(app + 'framework7.min.css')
-        .pipe(gulp.dest(dist))
-        .pipe($.size({ title : 'F7' }))
-        .pipe($.connect.reload());
+// copy libs to dist
+gulp.task('lib', function() {
 
-    gulp.src(app + 'fetch.js')
-        .pipe(gulp.dest(dist))
-        .pipe($.size({ title : 'F7' }))
-        .pipe($.connect.reload());
+    gulp.src(app + '/fonts/*')
+        .pipe(gulp.dest(dist + '/fonts'))
+        .pipe($.size({ title : 'Ionicons' }));
 
-    return gulp.src(app + 'framework7.min.js')
-      .pipe(gulp.dest(dist))
-      .pipe($.size({ title : 'F7' }))
-      .pipe($.connect.reload());
+
+    return gulp.src(scriptsLib + '/*')
+        .pipe(gulp.dest(dist + '/lib'))
+        .pipe($.size({ title : 'Lib' }))
+        .pipe($.connect.reload());
 });
 
 gulp.task('less', function() {
@@ -127,5 +124,5 @@ gulp.task('default', ['build', 'serve', 'watch']);
 
 // waits until clean is finished then builds the project
 gulp.task('build', ['clean'], function(){
-  gulp.start(['images', 'html', 'framework7', 'scripts','styles','fontIcons','less']);
+  gulp.start(['images', 'html', 'lib', 'scripts','styles','fontIcons','less']);
 });
